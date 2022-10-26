@@ -1,4 +1,0 @@
-2022-10-26 17:48:24,057 INFO  main : RecordCreator - [[ Some(10) ]]
-2022-10-26 17:48:24,127 INFO  main : RecordCreator - =================================================================
-2022-10-26 17:48:24,139 INFO  main : DataGenerator - [[ Keyfile generated successfully... ]]
-2022-10-26 17:48:24,141 INFO  main : DataGenerator - [[ Time taken by the process: 0.47542456 ]]
