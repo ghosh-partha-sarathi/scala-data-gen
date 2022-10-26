@@ -1,0 +1,9 @@
+Input:
+  schema.file: src/main/resources/schema.avsc
+  default.file: out/key.txt
+  input.file: src/main/resources/input.xlsx
+  input.sheet: custom-data
+  output.file: out/data.txt
+  serialize.output: false
+  output.file.serialized: out/data_ser.txt
+  generated.key.file: out/key.txt
