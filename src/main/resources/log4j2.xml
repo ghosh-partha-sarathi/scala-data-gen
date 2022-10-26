@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+
+    <Properties>
+        <Property name="filename">logs/app</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="Pattern Pattern %d{DEFAULT} %-5level %t : %logger{1} - %m%n"/>
+            <Filters>
+                <!-- Deny messages -->
+                <ThresholdFilter level="warn"  onMatch="DENY" onMismatch="NEUTRAL"/>
+
+                <!-- Accept info and deny debug/trace -->
+                <ThresholdFilter level="info"  onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+        </Console>
+        <RollingFile name="RollingFile"
+                     filePattern="${filename}-%d{yyyyMMdd-HHmmss}.log"
+                     filePermissions="rwxrwxr-x">
+            <PatternLayout pattern="%d{DEFAULT} %-5level %t : %logger{1} - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="5 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="data-gen" level="INFO"/>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
