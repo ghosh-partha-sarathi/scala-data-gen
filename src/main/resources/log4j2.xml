@@ -12,7 +12,7 @@
                 <!-- Deny messages -->
                 <ThresholdFilter level="warn"  onMatch="DENY" onMismatch="NEUTRAL"/>
 
-                <!--  Accept info and deny debug/trace  -->
+                <!-- Accept info and deny debug/trace -->
                 <ThresholdFilter level="info"  onMatch="ACCEPT" onMismatch="DENY"/>
             </Filters>
         </Console>
